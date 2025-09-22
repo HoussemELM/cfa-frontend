@@ -1,0 +1,47 @@
+@import "../variables";
+
+.review-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .stars {
+    display: flex;
+    gap: 0.2rem;
+
+    .star {
+      font-size: .95rem;
+
+      &.filled {
+        color: #FFD25D;
+      }
+      &.half {
+        color: #FFD25D;
+      }
+      &.empty {
+        color: $text-secondary-color;
+      }
+    }
+  }
+
+  .count {
+    font-size: 0.75rem;
+    color: $text-color;
+    font-weight: 500;
+  }
+  @media screen and (max-width:600px) {
+  gap: 0.2rem;
+  .stars {
+    display: flex;
+    gap: 0.1rem;
+    .star {
+      font-size: .75rem;
+    }
+  }
+  .count {
+    font-size: 0.75rem;
+    color: $text-color;
+    font-weight: 500;
+  }
+  }
+}

@@ -1,0 +1,103 @@
+@import "../variables";
+
+.employee-card {
+  z-index: 1;
+  display: grid;
+  height: calc(15rem * 1.15384615385);
+  width: 15rem;
+  border-radius: 5px;
+  color: white;
+  overflow: hidden;
+  grid-template-rows: 3fr 1fr;
+  place-content: center;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+
+  img {
+    // width: 100%;
+    // height: 100%;
+    object-fit: cover;
+
+  }
+
+  .details {
+    background-color: $primary-color;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(50%);
+    transition: transform 0.3s ease-in ;
+    span {
+      position: absolute;
+      background-color: $red-color;
+      padding: 6px;
+      top: 0;
+      font-size: 1.1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    small {
+      font-size: 0.9rem;
+    }
+  }
+  &:hover{
+    .details{
+      transform: translateY(0);
+    }
+  }
+
+  // Responsiveness
+  @media screen and (max-width: 768px) {
+    .details{
+        padding: 0.5rem;
+    }
+    width: 14rem;
+    height: 55vh;
+
+    .details h4 {
+      font-size: 1.1rem;
+    }
+
+    .details small {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: auto;
+    img{
+      width: 100%;
+      margin-inline: auto;
+      height: auto;
+    }
+
+    .details  {
+      position: relative;
+      transform: translateY(0);
+      h4{
+      font-size: 1rem;
+      }
+      
+    }
+
+    .details small {
+      font-size: 0.7rem;
+    }
+  }
+}

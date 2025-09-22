@@ -1,0 +1,208 @@
+@import "../variables";
+
+.category_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 14rem;
+  height: 4.5rem;
+  color: $secondary-color;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out 0.05s;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba($primary-color, 0.03) 50%,
+      transparent 100%
+    );
+    transition: transform 0.6s ease;
+    transform: translateX(-100%);
+  }
+
+  &:hover::before {
+    transform: translateX(100%);
+  }
+
+  // Text styles
+  .h5 {
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: width 0.3s ease;
+    }
+  }
+
+  .icon {
+    border: 1px dashed $primary-color;
+    height: 3.2rem;
+    width: 3.2rem;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $primary-color;
+    transform: translateY(-5%);
+    color: $primary-color;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    .h5::after {
+      width: 100%;
+    }
+
+    .icon {
+      transform: scale(1.05);
+      
+      &::before {
+        border-color: rgba($primary-color, 0.3);
+      }
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &.selected {
+    border: 1.5px dashed $primary-color;
+    background: linear-gradient(to right, rgba($primary-color, 0.02), rgba($primary-color, 0.05));
+    box-shadow: 0 4px 20px rgba($primary-color, 0.15);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 10px;
+      border: 2px solid rgba($primary-color, 0.2);
+      pointer-events: none;
+    }
+
+    &:hover {
+      border: 1.5px dashed $primary-color;
+      transform: inherit;
+      color: $secondary-color;
+
+      .icon::before {
+        border-color: rgba($primary-color, 0.5);
+      }
+    }
+  }
+
+  // Ripple effect on click
+  &:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba($primary-color, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+  }
+
+  // Media queries
+  @media (max-width: 1024px) {
+    width: 14rem;
+    padding: 0.8rem;
+    gap: 0.8rem;
+
+    .icon {
+      padding: 12px;
+      height: 3.2rem;
+      width: 3.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 0.7rem;
+    gap: 0.6rem;
+    border: .9px solid rgba(128, 128, 128, 0.205);
+    height: auto;
+    
+    .icon {
+      padding: 10px;
+      height: 2.8rem;
+      width: 2.8rem;
+    }
+  }
+}
+
+// Ripple animation
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .category_card {
+    background: linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.05));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    &.selected {
+      background: linear-gradient(to right, rgba($primary-color, 0.1), rgba($primary-color, 0.15));
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@import "../variables";
+
+#explore-more {
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #F0F5FF;
+    min-height: 60vh;
+    height: auto;
+    padding: 2.5rem 4rem;
+    gap: 2rem;
+    text-align: center;
+
+    .bg-img {
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        z-index: 0;
+
+        &:nth-child(1) {
+            top: 10%;
+            left: 15%;
+                   }
+        &:nth-child(2) {
+            top: 50%;
+            left: 10%;
+           }
+        &:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            
+        }
+        &:nth-child(4) {
+            bottom: 25%;
+            left: 5%;
+         
+        }
+        &:nth-child(5) {
+            top: 45%;
+            right: 2%;
+                   }
+        &:nth-child(6) {
+            top: 50%;
+            right:  10%;
+           }
+        &:nth-child(7) {
+            top: 15%;
+            right: 20%;
+            
+        }
+        &:nth-child(7) {
+            top: 25%;
+            right: 5%;
+         
+        }
+        &:nth-child(8) {
+            top: 10%;
+            right: 15%;
+         
+        }
+    }
+
+    h3 {
+        color: black;
+        font-family: "Epilogue", sans-serif;
+        z-index: 1;
+    }
+
+    p {
+        max-width: 60%;
+        z-index: 1;
+        color: #333931;
+    }
+
+    @media screen and (max-width: 1024px) {
+        gap: 1.2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+    margin-top: 1.5rem;
+    min-height: 45vh;
+    padding: 1rem;
+    gap: 1rem;
+    .bg-img {
+        width: 34px;
+        height: 34px;
+        &:nth-child(1) {
+            top: 9%;
+            left: 15%;
+                   }
+        &:nth-child(2) {
+            top: 60%;
+            left: 10%;
+           }
+        &:nth-child(3) {
+            bottom: 12%;
+            left: 18%;
+            
+        }
+        &:nth-child(4) {
+            bottom: 20%;
+            left: 5%;
+         
+        }
+        &:nth-child(5) {
+            top: 45%;
+            right: 2%;
+                   }
+        &:nth-child(6) {
+            top: 80%;
+            right:  10%;
+           }
+        &:nth-child(7) {
+            top: 30%;
+            right: 20%;
+            
+        }
+        &:nth-child(7) {
+            top: 30%;
+            right: 5%;
+         
+        }
+        &:nth-child(8) {
+            top: 10%;
+            right: 15%;
+         
+        }
+    }
+
+    h3 {
+        color: $primary-color;
+        font-weight: bold;
+        text-shadow: 0 0 10px #F0F5FF;
+    }
+
+    p {
+        max-width: 85%;
+    }
+    }
+}
+

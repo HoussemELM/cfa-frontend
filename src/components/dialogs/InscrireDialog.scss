@@ -1,0 +1,140 @@
+@import "../../variables";
+
+.incrire {
+  .dialog-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    h4{
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      .logo{
+        display: none;
+      }
+      .close-button {
+        position: absolute;
+        right: .5rem;
+        top: .2rem;
+        background: none;
+        border: none;
+        font-size: 2.2rem;
+        cursor: pointer;
+        padding: 0;
+        color: #888;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #f00;
+        }
+      }
+    }
+
+    .content {
+      width: 100%;
+      height: 95%;
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 1rem;
+      gap: 0.5rem;
+      form{
+        margin-top: 1.5rem;
+        width: 100%;
+        padding-inline: 1.75rem;
+        label{
+            font-size: 15px;
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+        }
+        input {
+            margin-bottom: 1.55rem;
+            height: 60px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            color: rgb(43, 43, 43);
+            &:focus {
+              border-color: $primary-color;
+              outline: none;
+            }
+          }
+          
+        button[type="submit"] {
+            background-color: $primary-color;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 58px;
+            cursor: pointer;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+          
+            &:hover {
+              background-color: darken($primary-color, 10%);
+            }
+          }
+          
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100vh;
+    .dialog-container{
+
+        .header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            
+            .logo {
+                display: block;
+                img {
+                    height: 2.5rem;
+                    width: auto;
+                }
+            }
+        }
+        .content{
+          display: flex;
+          padding: 0;
+          align-items: center;
+          padding-top: 7vh;
+          gap: .8rem;
+            h4{
+                font-weight: 500;
+                color: rgb(40, 40, 40);
+            }
+            p{
+                font-weight: 300;
+                color: rgb(40, 40, 40);
+                text-align: center;
+                max-width: 25ch;
+            }
+            form{
+              gap: 0.75rem;
+            }
+        }
+        
+    }
+  }
+}

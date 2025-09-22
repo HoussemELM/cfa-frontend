@@ -1,0 +1,128 @@
+@import "../variables";
+
+#popular {
+  padding: 5rem 8.5rem;
+  position: relative;
+  background-image: url("../assets/bg.png");
+  .dots_image{
+    position: absolute;
+    z-index: 0;
+    top: 20%;
+    left: 1%;
+    transform: translate(-50%,-50%);
+  }
+  header {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+  }
+
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $primary-color;
+    color: $on-primary-color;
+    border: none;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $fast-transition;
+    font-size: 1.3rem;
+    z-index: 1;
+
+    &.left {
+      left: -2.5rem;
+    }
+
+    &.right {
+      right: -2.5rem;
+    }
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  .slider-container {
+    display: flex;
+    padding: 0rem;
+    padding-inline: 2vw;
+    .slider {
+      display: flex;
+      justify-content: start;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .scroll-btn {
+      height: 35px;
+      width: 35px;
+      font-size: 1.1rem;
+      &.left{
+        left: -1rem;
+      }
+      &.right{
+        right: -1rem;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem .7rem;
+    .dots_image{
+      top: 20%;
+      left: 1%;
+      transform: translate(-50%,-50%);
+    }
+    header {
+  
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-color;
+      }
+  
+    }
+
+    .scroll-btn {
+      height: 30px;
+      width: 30px;
+      font-size: 1rem;
+      &.left{
+        left: -.5rem;
+      }
+      &.right{
+        right: -.5rem;
+      }
+    }
+
+    .slider-container {
+      .slider {
+        gap: 0;
+        
+      }
+    }
+  }
+}

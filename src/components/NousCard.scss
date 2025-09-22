@@ -1,0 +1,75 @@
+@import "../variables";
+
+.nous-card{
+    width: 23rem;
+    min-height: 23rem;
+    border: 2px dashed $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 1rem;
+    border-radius: 10px;
+    padding-inline: 1rem;
+    gap: .5rem;
+    cursor: pointer;
+    .icon{
+        width: 4.5rem;
+        height: 4.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .75rem;
+
+        border-radius: 50%;
+        background-color: $primary-color;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .title{
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $primary-color;
+    }
+    p{
+        font-size: .9rem;
+        text-align: center;
+        overflow: hidden;
+
+    }
+    &.r{
+        background-color: $primary-color;
+        .title{
+            color: white;
+            
+        }
+        p{
+            color: white;
+            }
+        .icon{
+            background-color: white;
+        }
+        
+    }
+   @media screen and (max-width:600px) {
+    width: 100%;
+    min-height: 60vw;
+    height: auto;
+    .title{
+        font-size: 1.35rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $primary-color;
+    }
+    p{
+        font-size: 1.1rem;
+        text-align: center;
+        overflow: hidden;
+
+    }
+   }
+   
+}

@@ -1,0 +1,100 @@
+@import "../variables";
+
+#pagination {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .result {
+    font-size: 1rem;
+    color: #4E5566;
+    margin-bottom: 1rem;
+    strong{
+      color: #1D2026;
+    }
+  }
+
+  .courses {
+    width: auto;
+    height: auto;
+    display: grid;
+    gap: 0.9rem;
+    row-gap: 1.1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1rem;
+    .pagination-btn {
+      padding: 0.5rem;
+      background-color: transparent;
+      color: #333;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: #ddd;
+      }
+      &.active {
+        background-color: $primary-color;
+        color: #fff;
+        font-weight: bold;
+      }
+      &:disabled {
+        background-color: #e0e0e0;
+        cursor: not-allowed;
+        color: #aaa;
+      }
+      @media (max-width: 600px) {
+        width: 36px;
+        height: 36px;
+        font-size: 0.875rem;
+      }
+    }
+  }
+  @media screen and (max-width:600px) {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    .result {
+      font-size: 1rem;
+      color: #4E5566;
+      margin-bottom: 1rem;
+      strong{
+        color: #1D2026;
+      }
+    }
+  
+    .courses {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+      .course-card {
+        width: 95%;
+        max-width: 95%; 
+        margin-inline: auto;
+      }
+    
+    }
+  
+  }
+}

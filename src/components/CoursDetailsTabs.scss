@@ -1,0 +1,70 @@
+@import "../variables";
+
+.course_tabs {
+  width: 100%;
+}
+
+.tabs_navigation {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.tab_button {
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  color: $text-color;
+}
+
+.tab_button.active {
+  border-bottom: 2px solid #ff4c4c;
+  color: #1D2026;
+  font-weight: bold;
+}
+
+.tab_button:hover {
+  color: #ff4c4c;
+  background-color: transparent;
+}
+
+.tab_content {
+  padding: 16px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .tabs_navigation {
+    margin-bottom: 1rem;
+  }
+
+  .tab_button {
+    padding: 10px 16px; 
+    font-size: 14px;   
+    text-align: center;
+  }
+  .tab_content {
+    font-size: 13px;   
+    padding: 12px 0;   
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tab_button {
+    padding: 8px 12px;  
+    font-size: 12px;  
+  }
+
+  .tab_content {
+    font-size: 12px;  
+    padding: 8px 0;    
+  }
+}

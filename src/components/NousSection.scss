@@ -1,0 +1,258 @@
+@import "../variables";
+#nous{
+    width: 100%;
+    height: auto;
+    padding: 2.5rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .gallery{
+        width: 95%;
+        height:100%;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        img{
+            width: 75%;
+            object-fit: cover;
+            z-index: 1;
+            cursor: pointer;
+            transition: $fast-transition;
+            &:hover{
+              transform: scale(1.05);
+            }
+        }
+        .dots{
+          position: absolute;
+          z-index: 0;
+          width: 30%;
+          right: 15%;
+          top: 0;
+        }
+       
+          
+          .etudiants {
+            position: absolute;
+            width: 14rem;
+            border-radius: 60px;
+            height: auto;
+            display: flex;
+            top: 71%;
+            right: -5%;
+            z-index: 2;
+            transform: translate(10%, -50%);
+            align-items: center;
+            background-color: $secondary-bg;
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: .3);
+            padding: 0.4rem 1.8rem;
+            justify-content: space-between;
+            animation: upDown 5s infinite;
+            will-change: transform;
+          
+            .data {
+              display: flex;
+              align-items: start;
+              justify-content: center;
+              flex-direction: column;
+              font-size: 0.95rem;
+              gap: 0.1rem;
+              color: $third-color;
+              
+              .count {
+                color: $red-color;
+                font-weight: 400;
+                font-size: 21px;
+                font-family: "Sora", sans-serif;
+              }
+            }
+          
+            .imgs {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+          
+              img {
+                width: 1.95rem;
+                height: 1.95rem;
+          
+                &:nth-child(2) {
+                  z-index: 2;
+                  transform: translateX(-20%);
+                }
+                &:nth-child(3) {
+                  z-index: 3;
+                  transform: translateX(-40%);
+                }
+                &:nth-child(4) {
+                  transform: translateX(-60%);
+                  z-index: 4;
+                }
+              }
+            }
+          }
+    }
+    .gallery.r{
+      justify-content: flex-end;
+      .dots{
+        position: absolute;
+        z-index: 0;
+        width: 30%;
+        left: 15%;
+        top: 0;
+      }
+        .etudiants{
+            display: flex;
+            top: 40%;
+            left: 35%;
+            transform: translate(-5%,-50%);
+            background-color: $secondary-bg;
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: .3);
+            padding:.5rem 1.8rem;
+            .data{
+                font-size: .95rem;
+                color: $text-color;
+                .count{
+                    font-size: 1.05rem;
+                    color: $secondary-color;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: .6rem;
+        .section-title{
+            margin-bottom: .8rem;
+        }
+        .our{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            .feature{
+                .subtitle{
+                    color: $secondary-color;
+                    font-size: 17px;
+                    font-family: "Sora",sans-serif;
+                }
+            }
+        }
+        .slide-btn{
+            margin-top: 1.5rem;
+        }
+    }
+    @media screen and (max-width:1024px) {
+    padding: 2rem 5.5rem;
+    grid-template-columns: 1fr;
+    .gallery {
+      height: auto;
+    }
+        
+    }
+    @media screen and (max-width:600px) {
+      height: auto;
+      padding:1rem;
+      grid-template-columns: 1fr;
+      margin-bottom: 2rem;
+      gap: 2rem;
+      .gallery{
+          width: 90%;
+          margin-inline: auto;
+          padding: 1rem;
+          justify-content: center;
+          align-items: center;
+          img{
+              width: 100%;
+              object-fit: cover;
+              z-index: 1;
+              cursor: pointer;
+              transition: $fast-transition;
+              &:hover{
+                transform: scale(1.05);
+              }
+          }
+          .dots{
+            width: 45%;
+            right: 1%;
+          }
+          @keyframes upDown {
+              0%{
+                transform: translate(10%, -50%);
+              }
+              50% {
+                transform: translate(10%, -30%);
+                animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              }
+             
+              100% {
+                transform: translate(10%, -50%);
+              }
+            }
+            
+            .etudiants {
+              position: absolute;
+              width: 13rem;
+              border-radius: 50px;
+              height: auto;
+              display: flex;
+              top: 75%;
+              right: 0;
+              transform: translate(10%, -50%);
+              .data {
+                font-size: 0.85rem;
+                .count {
+                  font-size: 20px;
+                }
+              }
+              .imgs {
+                img {
+                  width: 1.7rem;
+                  height: 1.7rem;
+                }
+              }
+            }
+            
+      }
+      .gallery.r{
+        justify-content: center;
+        .dots{
+          left: 1%;
+          width: 45%;
+        }
+          
+  
+      }
+      .content{
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: start;
+          gap: .6rem;
+          .section-title{
+              margin-bottom: .8rem;
+          }
+          .our{
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 1rem;
+              margin-top: 2rem;
+              .feature{
+                  .subtitle{
+                      font-size: 15px;
+                  }
+              }
+          }
+          .slide-btn{
+              margin-top: 1.5rem;
+          }
+      }
+    }
+}

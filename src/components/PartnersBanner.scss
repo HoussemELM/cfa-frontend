@@ -1,0 +1,94 @@
+@import "../variables";
+
+#partners_banner {
+width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1.5rem;
+  justify-content: center;
+  height: auto;
+  gap: 1.4rem;
+  .section-title{
+    text-align: center;
+  }
+  .partners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    gap: 3.5rem;
+    width: 75vw;
+    height: 11rem;
+    position: relative;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+
+    img {
+      cursor: pointer;
+      width: 8.5rem;
+      left: max(calc(8.5rem * 6),100%);
+      transition: all 0.3s ease;
+      animation-name: scrollLeft;
+      animation-duration: 20s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      position: absolute  ;
+      &:nth-child(1){
+        animation-delay: calc((20s / 6) * (6 - 1) * -1 );
+      }
+      &:nth-child(2){
+          animation-delay: calc((20s / 6) * (6 - 2) * -1 );
+
+        
+      }
+      &:nth-child(3){
+          animation-delay: calc((20s / 6) * (6 - 3) * -1 );
+        
+      }
+      &:nth-child(4){
+          animation-delay: calc((20s / 6) * (6 - 4) * -1 );
+
+        
+      }
+      &:nth-child(5){
+          animation-delay: calc((20s / 6) * (6 - 5) * -1 );
+      }
+      &:nth-child(6){
+        animation-delay: calc((20s / 6) * (6 - 6) * -1 );
+    }
+    }
+  }
+
+  @media screen and (max-width:600px) {
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1.5rem;
+  justify-content: center;
+
+  .partners{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  width: 88vh;
+  justify-content: center;
+    gap: 1rem;
+    img{
+      width: 6.8rem;
+    }
+   
+  }
+  }
+}
+
+@keyframes scrollLeft{
+  // from{
+
+  // }
+  to{
+    left: -6rem;
+  }
+}

@@ -1,0 +1,56 @@
+@import "../variables";
+
+#heading-banner {
+  width: 100%;
+  padding-inline: 0.3rem;
+  height: auto;
+  transform: scaleY(0.9);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  h1 {
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translate(-100%, -50%); 
+    left: 10%;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Poppins" , sans-serif;
+    opacity: 0; 
+    animation: slideIn 1.2s ease-out 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translate(-100%, -50%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, -50%);
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width:600px) {
+    width: 100vw;
+    transform: scaleX(1.05);
+    height: auto;
+    h1{
+      font-size: 25px;
+    }
+  }
+}

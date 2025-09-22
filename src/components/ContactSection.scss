@@ -1,0 +1,190 @@
+@import "../variables";
+.contact_section {
+    min-height: 110vh;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    .container {
+        width: 85%;
+        height: 85%;
+        margin: auto;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        padding:1.5rem 6.2rem;
+        box-shadow: 
+            0 0 5px rgba($color: #000000, $alpha: 0.1),
+            0 15px 10px -10px rgba(0, 0, 0, 0.05),   
+            0 25px 15px -15px rgba(0, 0, 0, 0.07),  
+            0 45px 25px -20px rgba(0, 0, 0, 0.06),  
+            0 65px 30px -30px rgba(0, 0, 0, 0.04),  
+            0 85px 35px -35px rgba(0, 0, 0, 0.03),  
+            0 105px 40px -40px rgba(0, 0, 0, 0.035)
+            ;
+
+
+        .bn {
+            position: absolute;
+            background-color: $primary-color;
+            width: 30%;
+            right: 0;
+            top: 0;
+            z-index: 0;
+            height: 100%;
+        }
+
+        .contact_container {
+            z-index: 1;
+
+            h1 {
+                font-size: 2.3rem;
+                color: $primary-color;
+
+                span {
+                    color: $red-color;
+                }
+            }
+
+            .form_container {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+                overflow-y: scroll;
+                gap: 2rem;
+                form {
+                    display: flex;
+                    align-items: start;
+                    justify-content: start;
+                    gap: 1.5rem;
+                    flex-direction: column;
+                    input, textarea {
+                        width: 100%;
+                        padding: 1.05rem;
+                        border: 1px solid $border-color;
+                        border-radius: 13px;
+                        background-color: $secondary-bg;
+                        color: $text-color;
+                        font-size: $font-size-base;
+                        box-shadow: $shadow-sm;
+                        transition: $fast-transition;
+
+                        &:focus {
+                            outline: none;
+                            border-color: $primary-color;
+                            box-shadow: 0 0 8px rgba($primary-color, 0.3);
+                        }
+
+                        &::placeholder {
+                            color: #828282;
+                            font-weight: $font-weight-normal;
+                            font-family: "Montserrat" , sans-serif;
+                        }
+                    }
+                    input[type='text'],input[type='email'],input[type='phone']{
+                        height: 63px;
+
+                    }
+                    input[type='submit']{
+                        color: white;
+                        cursor: pointer;
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                        border-radius: 30px;
+                        padding-block: .7rem;
+                        background-color: $primary-color;
+                    }                        
+                    textarea {
+                        min-height: 7rem; 
+                        resize: vertical;
+                    }
+
+                    button {
+                        padding: $spacing-sm $spacing-md;
+                        background-color: $primary-color;
+                        color: $on-primary-color;
+                        border: none;
+                        border-radius: $border-radius-md;
+                        font-weight: $font-weight-semibold;
+                        font-size: $font-size-lg;
+                        cursor: pointer;
+                        transition: $fast-transition;
+
+                        &:hover {
+                            background-color: darken($primary-color, 10%);
+                            box-shadow: $shadow-md;
+                        }
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: 0 0 8px rgba($primary-color, 0.3);
+                        }
+                    }
+
+                }
+                .map{
+                    width: 95%;
+                    z-index: 10;
+                    padding: 1rem;
+                    iframe{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    @media screen and (max-width: 600px) {
+        min-height: 100vh;
+        margin-top: 3rem;
+        
+        .container {
+            width: 98%;
+            height: 100%;
+            margin: auto;
+            padding: 1rem;
+
+            .bn {
+                display: none;
+            }
+
+            .contact_container {
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                .form_container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+
+                    form {
+                        gap: 1rem;
+                       
+
+                        input, textarea {
+                            width: 100%;
+                            padding: .5rem;
+                            border-radius: 9px;
+                            font-size: 14px;
+                        }
+                        input[type='text'],input[type='email'],input[type='phone']{
+                            height: 48px;
+                        }
+                        input[type='submit']{
+                            font-size: 1rem;
+                            border-radius: 25px;
+                            padding-block: .5rem;
+                        }                        
+                        button {
+                            padding: $spacing-sm $spacing-sm;
+                            font-weight: $font-weight-normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

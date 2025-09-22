@@ -1,0 +1,536 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+html, body,#root {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    color: $text-color;
+    background-color: #FFF;
+    line-height: 1.6;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.banner{
+    width: 100%;
+    height: 37vh;
+}
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: $fast-transition;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+h5, h6 {
+    font-size: 1rem;
+}
+
+/* Layout Elements */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.column {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+button, .button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary-color;
+    color: $on-primary-color;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: $fast-transition;
+
+    &:hover {
+        background-color: $icon-color;
+    }
+
+    &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    color: $text-secondary-color;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: $mid-transition;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+    font-weight: 500;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    color: $text-secondary-color;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid $secondary-color;
+    text-align: left;
+}
+
+th {
+    background-color: $primary-color;
+    color: $on-primary-color;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.highlight{
+    font-size: .9rem;
+    font-weight: 300;
+    color: $red-color;
+    text-transform: uppercase;
+}
+section{
+    width: 100%;
+    height: 90vh;
+    }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.slide-btn {
+    position: relative;
+    border-radius: 40px;
+    padding: 0.5rem 1.8rem;
+    padding-right: 2.5rem;
+    background-color: $primary-color;
+    color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+    .icon-button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(20%, -50%);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $red-color;
+      color: white;
+      fill: white;
+      transition: all 0.4s ease, box-shadow 0.2s ease-in-out;
+      opacity: 0.9;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(50, 50, 93, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: pulse 1s infinite;
+  
+      .icon-button {
+        transform: translate(20%, -50%) rotate(360deg) scale(1.2);
+        opacity: 1;
+        box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+  
+    &:active {
+      animation: click-bounce 0.2s ease-in-out;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      .icon-button {
+        transform: translate(20%, -50%) scale(1.1);
+        box-shadow: 0 2px 4px rgba(255, 0, 0, 0.4);
+      }
+    }
+  
+    @media screen and (max-width: 1024px) {
+      .icon-button {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  
+    @media screen and (max-width: 600px) {
+      .icon-button {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba($primary-color, 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px 5px rgba($primary-color, 0.2);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba($primary-color, 0);
+    }
+  }
+  
+  @keyframes click-bounce {
+    0% {
+      transform: scale(1) rotate(0deg) translateY(0);
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to right, $primary-color, lighten($primary-color, 10%));
+    }
+    25% {
+      transform: scale(0.92) rotate(-5deg) translateY(-2px);
+      box-shadow: 0 6px 12px rgba(50, 50, 93, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to right, lighten($primary-color, 15%), $primary-color);
+    }
+    50% {
+      transform: scale(0.95) rotate(5deg) translateY(2px);
+      box-shadow: 0 8px 16px rgba(50, 50, 93, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to right, $primary-color, darken($primary-color, 10%));
+    }
+    75% {
+      transform: scale(1.03) rotate(-3deg) translateY(-1px);
+      box-shadow: 0 5px 10px rgba(50, 50, 93, 0.25), 0 2px 5px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to right, darken($primary-color, 5%), lighten($primary-color, 5%));
+    }
+    100% {
+      transform: scale(1) rotate(0deg) translateY(0);
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to right, $primary-color, lighten($primary-color, 10%));
+    }
+  }
+  
+  
+  .section-title {
+    font-size: 35px; 
+    color: $primary-color;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    @media screen and (max-width:600px) {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+
+.subtitle{
+    color: $subtitle-color;
+    font-family: "Poppins" , sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+@media (max-width: 1024px) {
+    html, body, #root {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .container {
+        width: 95%;
+    }
+
+    .row {
+        flex-direction: column; 
+    }
+
+    .column {
+        padding: 0.5rem 0;
+    }
+
+    button, .button {
+        font-size: 0.9rem; 
+    }
+
+    .slide-btn {
+        font-size: 0.85rem;
+    }
+
+    section {
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    html, body, #root {
+        font-size: 14px; 
+    }
+
+    h1 {
+        font-size: 1.5rem; 
+    }
+    h2 {
+        font-size: 1.25rem; 
+    }
+    h3 {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 100%; 
+        padding: 0.5rem; 
+    }
+
+    .row {
+        flex-direction: column; 
+    }
+
+    .column {
+        padding: 0.5rem 0; 
+    }
+
+    button, .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    input, textarea, select {
+        font-size: 0.9rem; 
+    }
+
+    .section-title {
+        font-size: 1.7rem; 
+    }
+
+    .subtitle {
+        font-size: 1rem; 
+    }
+
+    .highlight {
+        font-size: 0.8rem;
+    }
+}
+
+@layer base {
+  :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 10% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+  .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+    @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-0.4rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+}
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px; 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 36%; 
+    height: 90vh;
+    z-index: 999;
+    overflow: hidden; 
+   @media screen and (max-width : 1024px) {
+    width: 45%;
+   }
+    @media screen and (max-width : 600px) {
+        width: 100vw;
+        height: 100vh;
+    } 
+}
+
+
+
+  
+  @layer components {
+    .checkbox-custom {
+      @apply relative w-3 h-3 border border-gray-300 appearance-none cursor-pointer transition-all duration-300 ease-in-out;
+    }
+    
+    .checkbox-custom:checked {
+      @apply bg-indigo-500 border-indigo-500;
+    }
+    
+    .checkbox-custom:checked::after {
+      content: '';
+      @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-no-repeat bg-contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+  
+    .checkbox-custom:focus {
+      @apply outline-none ring-2 ring-indigo-200;
+    }
+  
+    .hover-effect {
+      @apply relative hover:bg-gray-50/70 transition-all duration-300 ease-in-out;
+    }
+  
+    .hover-effect::after {
+      content: '';
+      @apply absolute left-0 w-[3px] h-full bg-gradient-to-b from-indigo-500 to-blue-400 opacity-0 transition-opacity duration-200;
+    }
+  
+    .hover-effect:hover::after {
+      @apply opacity-100;
+    }
+  }

@@ -1,0 +1,58 @@
+// TReviewBar.scss
+@import "../variables";
+
+.t-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .star {
+    font-size: 1.5rem;
+    color: #cccccc; 
+    fill:#cccccc ;
+    svg{
+      *{
+        color: #cccccc; 
+        fill:#cccccc ;
+      }
+    }
+    margin: 0 2px;
+
+    &.filled {
+      color: #FFB800; 
+      fill: #FFB800;
+      svg{
+        *{
+          color: #FFB800; 
+          fill:#FFB800 ;
+        }
+      }
+    }
+  }
+  @media screen and (max-width:600px) {
+    .star {
+      font-size: .9rem;
+      svg{
+        height: 16px;
+        width: 16px;
+        *{
+          color: #cccccc; 
+          fill:#cccccc ;
+        }
+      }
+      margin: 0 2px;
+  
+      &.filled {
+        color: #FFB800; 
+        fill: #FFB800;
+        svg{
+          *{
+            color: #FFB800; 
+            fill:#FFB800 ;
+          }
+        }
+      }
+    }
+    
+  }
+}

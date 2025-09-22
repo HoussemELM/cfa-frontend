@@ -1,0 +1,119 @@
+@import "../variables";
+
+
+#support_page{
+    #support-items{
+        height: auto;
+        padding: 2rem 7rem;
+        display: grid;
+        gap: 3.5rem;
+        grid-template-columns: 1fr 1fr ;
+        .contact,.call{
+            width: 100%;
+            min-height: 15rem;
+            max-width: 30rem;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1.7fr 1fr ;
+            padding: 1rem;
+            justify-content: space-between;
+            .data{
+                width: 100%;
+                padding-right: 10px;
+                display: flex;
+                padding: 2rem 1rem;
+                flex-direction: column;
+                gap: 10px;
+                p{
+                    font-size: 15px;
+                }
+                
+                .slide-btn {
+                    width: auto;
+                    align-self: flex-start; 
+                }
+            }
+            img{
+                height: 100%;
+                width: 100%;
+                
+            }
+       
+        }
+        .contact img{
+            object-fit: cover;
+
+        }
+        .contact{
+            background-color: $primary-color;
+            color: white;
+            margin-left: auto;
+            .slide-btn{
+                color: $primary-color;
+                background-color: white;
+            }
+           
+        }
+        .call{
+            margin-right: auto;
+            background-color: #F7FAFF;
+            color: $primary-color;
+           
+        }
+      @media screen and (max-width:1024px) {
+        padding: 1rem;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr ;
+        .contact,.call{
+            min-height: 15rem;
+            max-width: 30rem;
+            padding: .5rem;
+            .data{
+                padding-right: 10px;
+                padding: 2rem 1rem;
+                gap: 8px;
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+      }
+
+      @media screen and (max-width:1024px) {
+        grid-template-columns: 1fr;
+        .contact,.call{
+            width: 100%;
+            min-height: auto;
+            grid-template-columns: 2fr 1fr ;
+            padding: .2rem;
+            .data{
+                padding: .65rem;
+                gap: 8px;
+                p{
+                    font-size: 14px;
+                }
+            }
+            img{
+                height: 100%;
+                width: 100%;
+            }
+       
+        }
+      
+        .contact{
+            background-color: $primary-color;
+            color: white;
+            margin-left: auto;
+            .slide-btn{
+                color: $primary-color;
+                background-color: white;
+            }
+           
+        }
+        .call{
+            border: 1px solid rgba(112, 128, 144, 0.15);
+            padding-block: 1rem;
+        }
+      }
+    }
+}

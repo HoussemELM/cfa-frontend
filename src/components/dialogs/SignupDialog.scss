@@ -1,0 +1,242 @@
+@import "../../variables";
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+
+  
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+}
+
+dialog.signup {
+  background-color: white;
+  width: 480px;
+  // max-width: 90vw;
+  // min-height: 300px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  // position: fixed;
+  top: 5%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  overflow-y: auto;
+  // max-height: 90vh;
+  // z-index: 1000;
+  
+  &::backdrop {
+    display: none;
+  }
+  
+  .actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+    
+    button {
+      background-color: rgba(13, 63, 142, 0.1);
+      padding: 0.55rem;
+      color: $primary-color;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background-color: rgba(13, 63, 142, 0.2);
+        transform: rotate(90deg);
+      }
+    }
+  }
+  
+  .auth-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .logo-container {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      
+      .app-logo {
+        max-width: 120px;
+        height: auto;
+      }
+    }
+    
+    h2 {
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      font-size: 1.7rem;
+      color: $primary-color;
+      text-align: center;
+    }
+    
+    .info-section {
+      width: 100%;
+      margin-bottom: 2rem;
+      
+      p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      
+      .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+          padding-left: 0.5rem;
+          
+          .icon-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(13, 63, 142, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            
+            svg {
+              color: $primary-color;
+              font-size: 0.75rem;
+            }
+          }
+          
+          span {
+            font-size: 0.95rem;
+            color: #333;
+          }
+        }
+      }
+    }
+    
+    .auth-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      
+      .auth-btn {
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .btn-icon {
+          margin-right: 0.75rem;
+          font-size: 1.1rem;
+        }
+        
+        &.login-btn {
+          background-color: $primary-color;
+          color: white;
+          border: none;
+          
+          &:hover {
+            background-color: darken($primary-color, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          }
+        }
+        
+        &.signup-btn {
+          background-color: white;
+          color: $primary-color;
+          border: 2px solid $primary-color;
+          
+          &:hover {
+            background-color: rgba(13, 63, 142, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+    
+    .terms-notice {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+      line-height: 1.5;
+      
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 500;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .iframe-placeholder {
+      width: 100%;
+      min-height: 100px;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    padding: 1.5rem;
+    
+    .auth-container {
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .info-section {
+        .benefits-list {
+          li {
+            align-items: flex-start;
+            
+            .icon-circle {
+              margin-top: 2px;
+            }
+            
+            span {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

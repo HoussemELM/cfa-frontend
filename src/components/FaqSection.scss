@@ -1,0 +1,80 @@
+@import "../variables";
+
+#faq {
+    width: 100%;
+    padding: 3rem 6.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 2.5rem;
+    height: auto;
+    &.reverse{
+        background-color: $primary-color;
+        color: white;
+        .section-title{
+            color: white;
+        }
+        .slide-btn{
+            background-color: white;
+            color: $primary-color;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        p {
+            margin-block: 2.5rem;
+        }
+    }
+
+    .gallery {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        position: relative;
+       
+        img {
+            max-height: 82vh;
+            z-index: 1;
+        }
+
+    }
+}
+
+@media (max-width: 1024px) {
+    #faq {
+        padding: 2rem; 
+        grid-template-columns: 1fr; 
+        .gallery {
+            justify-content: center; 
+            position: relative;
+            img {
+                width: 75%; 
+                height: auto; 
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #faq {
+        padding: 1rem;
+        .content {
+            p {
+                margin-block: 1.5rem; 
+            }
+        }
+        .gallery {
+            flex-direction: column;
+            align-items: center; 
+            display: none;
+            img {
+                width: auto; 
+                height: 40vh;
+            }
+     
+        }
+    }
+}

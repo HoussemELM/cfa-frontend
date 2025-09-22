@@ -1,0 +1,62 @@
+@import "../variables";
+
+#avenir-banner {
+    margin-block: 2rem;
+    height: 47vh;
+    background-image: url("../assets/Accueil/Group\ 24.png");
+    background-size: cover;  
+    background-position: center;  
+    position: relative;
+    .section-title{
+        color: white;
+    }
+    .content{
+        z-index: 10;
+    }
+    .slide-btn{
+        color: $primary-color;
+        background-color: white;
+    }
+    
+    .play-btn{
+        width: 45px;
+        height: 45px;
+        background-color: $red-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      
+        font-size: 1.5rem;
+        border-radius: 50%;
+    }
+    @media screen and (max-width:600px) {
+        height: auto;
+        padding-block: 2rem;
+        margin-block: 2rem;
+    .section-title{
+        color: white;
+    }
+    .content{
+        z-index: 10;
+    }
+    .slide-btn{
+        color: $primary-color;
+        background-color: white;
+    }
+    
+    .play-btn{
+        width: 45px;
+        height: 45px;
+        background-color: $red-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      
+        font-size: 1.5rem;
+        border-radius: 50%;
+    }
+        
+    }
+}
